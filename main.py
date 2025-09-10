@@ -9,8 +9,8 @@ import time
 
 
 st.set_page_config(
-    page_title="MediChat Pro - Medical Document Assistant",
-    page_icon="🏥",
+    page_title="AskDoc Pro - Medical Document Assistant",
+    page_icon="?",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -91,7 +91,7 @@ st.markdown("""
 # Sidebar for document upload
 with st.sidebar:
     st.markdown("### 📁 Document Upload")
-    st.markdown("Upload your medical documents to start chatting!")
+    st.markdown("Upload your Any documents to start chatting!")
     
     uploaded_files = pdf_uploader()
     
@@ -130,7 +130,7 @@ with st.sidebar:
                 st.balloons()
 
 # Main chat interface
-st.markdown("### 💬 Chat with Your Medical Documents")
+st.markdown("### 💬 Chat with Your Any Documents")
 
 # Display chat messages
 for message in st.session_state.messages:
@@ -139,7 +139,7 @@ for message in st.session_state.messages:
         st.caption(message["timestamp"])
 
 # Chat input
-if prompt := st.chat_input("Ask about your medical documents..."):
+if prompt := st.chat_input("Ask about your documents..."):
     # Add user message to chat history
     timestamp = time.strftime("%H:%M")
     st.session_state.messages.append({
@@ -164,11 +164,11 @@ if prompt := st.chat_input("Ask about your medical documents..."):
                 context = "\n\n".join([doc.page_content for doc in relevant_docs])
                 
                 # Create prompt with context
-                system_prompt = f"""You are MediChat Pro, an intelligent medical document assistant. 
-                Based on the following medical documents, provide accurate and helpful answers. 
+                system_prompt = f"""You are AskDoc Pro, an intelligent document assistant. 
+                Based on the following documents, provide accurate and helpful answers. 
                 If the information is not in the documents, clearly state that.
 
-                Medical Documents:
+                Any Documents:
                 {context}
 
                 User Question: {prompt}
@@ -195,6 +195,6 @@ if prompt := st.chat_input("Ask about your medical documents..."):
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; font-size: 0.9rem;">
-    <p>🤖 Powered by Euri AI & LangChain | 🏥 Medical Document Intelligence</p>
+    <p>🤖 Powered by $$$ | ? Any Document Intelligence</p>
 </div>
 """, unsafe_allow_html=True)    
