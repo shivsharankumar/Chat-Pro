@@ -1,1 +1,1 @@
-EURI_API_KEY = "euri-f4edf16e87097327dfe5297d4dd9ad279b160157ab0fcd1068c223251ecbbde3"
+EURI_API_KEY = "euri-************"
